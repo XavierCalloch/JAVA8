@@ -5,7 +5,19 @@ import java.util.List;
 import projPOO01.GestionAchat.commande;
 
 public interface IFournisseur {
-	public boolean livre();
+	/**
+	 * @return false par défaut
+	 */
+	default public boolean livre() {
+		return false;
+	}
+	
 	public void commande(List<commande> listcommande);
-	public boolean isFournisseur();
+	
+	/**
+	 * @return true par défaut
+	 */
+	default public boolean isFournisseur() {
+		return true;
+	}
 }

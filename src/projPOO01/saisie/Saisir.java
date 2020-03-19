@@ -1,6 +1,8 @@
 package projPOO01.saisie;
 
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -249,6 +251,20 @@ public class Saisir {
 				}
 
 			}
+			
+			duree = 0;
+			System.out.println("Saisir la durée du contrat de l'intérimaire");
+			while (Menus.sc.hasNext() && duree == 0) {
+
+				if (Menus.sc.hasNextDouble()) {
+					salaire = Menus.sc.nextDouble();
+					break;
+				} else {
+					System.out.println("Saisir la durée du contrat de l'intérimaire");
+					Menus.sc.next();
+				}
+
+			}
 
 			Interimaire inter = new Interimaire(nom, prenom, adresse, ville, codepostal, secu, salaire, contratAgence, duree);
 
@@ -388,7 +404,7 @@ public class Saisir {
 	 */
 	public static ArrayList<Achat> SaisirAchat(){
 		ArrayList<Achat> achats = new ArrayList<Achat>();
-		Date d = null; 
+		LocalDate d = null; 
 		String intitule;
 		String qte = null;
 		boolean b = true;
@@ -446,7 +462,7 @@ public class Saisir {
 	
 	public static ArrayList<commande> SaisirCommande(){
 		ArrayList<commande> cmd = new ArrayList<commande>();
-		Date d = null; 
+		LocalDate d = null; 
 		String intitule;
 		String qte = null;
 		boolean b = true;
@@ -499,6 +515,10 @@ public class Saisir {
 		}
 		
 		return cmd;
+		
+	}
+	
+	public static Duration calculTempsSaisie() {
 		
 	}
 	

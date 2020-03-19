@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class Achat {
 	/** date */
-	private Date date;
+	private LocalDate date;
 	/** intitulé */
 	private String intitule;
 	/** quantité */
@@ -27,7 +27,7 @@ public class Achat {
 	 * @param i un intitulé
 	 * @param q une quantité
 	 */
-	public Achat(Date d, String i, int q) {
+	public Achat(LocalDate d, String i, int q) {
 		// TODO Auto-generated constructor stub
 		this.date =d;
 		

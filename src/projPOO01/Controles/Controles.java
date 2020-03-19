@@ -1,6 +1,10 @@
 package projPOO01.Controles;
 
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import projPOO01.Exceptions.ExceptionDate;
@@ -18,13 +22,13 @@ public class Controles {
 	 * @return Date une date
 	 * @throws ExceptionDate
 	 */
-	public static Date CtrlDate(String d) throws ExceptionDate{
+	public static LocalDate CtrlDate(String d) throws ExceptionDate{
 		String pattern = "dd/MM/yyyy";
 		SimpleDateFormat sd = new SimpleDateFormat(pattern);
 		sd.setLenient(false);
-		Date dt = new Date();
+		LocalDate dt = LocalDate.now();
 		try {
-			dt =sd.parse(d);
+			dt = LocalDate.parse(d, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 			
 		}catch(Exception e) {
 			throw new ExceptionDate("Mauvais format de date saisi");
